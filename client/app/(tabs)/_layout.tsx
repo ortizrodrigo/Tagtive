@@ -1,5 +1,4 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
 import { Platform } from 'react-native';
 
 import { HapticTab } from '@/components/HapticTab';
@@ -28,20 +27,20 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name='index'
+        name='chats'
         options={{
-          title: "Index",
+          title: "Chats",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name='home' color={color} />
+            <IconSymbol size={28} name='chatbubbles-sharp' color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name='explore'
+        name='feed'
         options={{
-          title: "Explore",
+          title: "Feed",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name='navigate' color={color} />
+            <IconSymbol size={28} name='grid' color={color} />
           ),
         }}
       />
@@ -51,6 +50,15 @@ export default function TabLayout() {
           title: "Events",
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name='calendar' color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='profile'
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name='person-circle-sharp' color={color} />
           ),
         }}
       />
