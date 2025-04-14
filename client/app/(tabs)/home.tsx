@@ -1,11 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, SafeAreaView } from "react-native";
-import { styles } from "@/styles/feed";
+import { styles } from "@/styles/home";
 
-export default function FeedScreen() {
+export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Tagtive! - FEED</Text>
+      <Text>Tagtive! - HOME</Text>
       <StatusBar style='auto' />
     </SafeAreaView>
   );
