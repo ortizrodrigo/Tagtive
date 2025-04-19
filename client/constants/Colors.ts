@@ -5,8 +5,8 @@
 
 const tintColorLight = "#0a7ea4";
 const tintColorDark = "#fff";
-const coralRed = "#FF3C30";
-const aquaBlue = "#30E3E3";
+const coralRed = "#ff3056";
+const aquaBlue = "#2e89ff";
 
 export const Colors = {
   light: {
