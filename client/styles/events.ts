@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
   card: {
-    padding: 16,
+    paddingRight: 120,
+    padding: 12,
     marginVertical: 8,
     marginHorizontal: 16,
     borderRadius: 8,
@@ -21,15 +22,21 @@ export const styles = StyleSheet.create({
   titleRow: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 8,
+    marginBottom: 4,
   },
   icon: {
-    marginRight: 8,
+    marginRight: 4,
+    marginBottom: 4,
+  },
+  inlineIcon: {
+    marginLeft: 4,
+    marginRight: 4,
+    marginBottom: 4,
   },
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 8,
+    marginBottom: 4,
   },
   detail: {
     fontSize: 14,

@@ -19,15 +19,16 @@ export type EventType =
 type EventCardProps = {
   title: string;
   date: string;
+  time: string;
   location: string;
   eventType: EventType;
 };
 
 const eventIconMap: Record<EventType, string> = {
-  Work: "briefcase-outline",
+  Work: "business-outline",
   Social: "people-outline",
   Dining: "restaurant-outline",
-  Sports: "body-outline",
+  Sports: "fitness-outline",
   Entertainment: "ticket-outline",
   Flight: "airplane-outline",
   Education: "library-outline",
@@ -38,6 +39,7 @@ const eventIconMap: Record<EventType, string> = {
 export function EventCard({
   title,
   date,
+  time,
   location,
   eventType,
 }: EventCardProps) {
@@ -47,6 +49,7 @@ export function EventCard({
     <View
       style={[styles.card, { backgroundColor: Colors[colorScheme].background }]}
     >
+      {/* Title Row */}
       <View style={styles.titleRow}>
         <Ionicons
           name={
@@ -55,22 +58,46 @@ export function EventCard({
             >["name"]
           }
           size={24}
-          color={Colors[colorScheme].aquaBlue}
+          color={Colors[colorScheme].coralRed}
           style={styles.icon}
         />
-        <Text
-          numberOfLines={1}
-          style={[styles.title, { color: Colors[colorScheme].coralRed }]}
-        >
+        <Text style={[styles.title, { color: Colors[colorScheme].coralRed }]}>
           {title}
         </Text>
       </View>
-      <Text style={[styles.detail, { color: Colors[colorScheme].text }]}>
-        Date: {date}
-      </Text>
-      <Text style={[styles.detail, { color: Colors[colorScheme].text }]}>
-        Location: {location}
-      </Text>
+      {/* Date Row */}
+      <View style={styles.titleRow}>
+        <Ionicons
+          name='today-outline'
+          size={18}
+          color={Colors[colorScheme].aquaBlue}
+          style={styles.icon}
+        />
+        <Text style={[styles.detail, { color: Colors[colorScheme].text }]}>
+          {date}
+        </Text>
+        <Ionicons
+          name='time-outline'
+          size={18}
+          color={Colors[colorScheme].aquaBlue}
+          style={styles.inlineIcon}
+        />
+        <Text style={[styles.detail, { color: Colors[colorScheme].text }]}>
+          {time}
+        </Text>
+      </View>
+      {/* Location Row */}
+      <View style={styles.titleRow}>
+        <Ionicons
+          name='location-outline'
+          size={18}
+          color={Colors[colorScheme].aquaBlue}
+          style={styles.icon}
+        />
+        <Text style={[styles.detail, { color: Colors[colorScheme].text }]}>
+          {location}
+        </Text>
+      </View>
     </View>
   );
 }

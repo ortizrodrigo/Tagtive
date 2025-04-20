@@ -6,6 +6,7 @@ type Event = {
   id: string;
   title: string;
   date: string;
+  time: string;
   location: string;
   eventType: EventType;
 };
@@ -14,63 +15,72 @@ const mockEvents: Event[] = [
   {
     id: "1",
     title: "Andrea's Party",
-    date: "2025-05-01",
+    date: "01/05/25",
+    time: "8:00 PM",
     location: "123 Some Street",
     eventType: "Social",
   },
   {
     id: "2",
     title: "Joia Beach Club",
-    date: "2025-05-10",
+    date: "01/05/25",
+    time: "8:00 PM",
     location: "Boulevard de Asia",
     eventType: "Entertainment",
   },
   {
     id: "3",
     title: "Conference",
-    date: "2025-05-15",
+    date: "01/05/25",
+    time: "8:00 PM",
     location: "San Francisco",
     eventType: "Work",
   },
   {
     id: "4",
     title: "Football",
-    date: "2025-05-15",
+    date: "01/05/25",
+    time: "8:00 PM",
     location: "Field",
     eventType: "Sports",
   },
   {
     id: "5",
     title: "Eureka!",
-    date: "2025-05-15",
+    date: "01/05/25",
+    time: "8:00 PM",
     location: "Telegraph",
     eventType: "Dining",
   },
   {
     id: "6",
     title: "Flight to Colombia",
-    date: "2025-05-15",
+    date: "01/05/25",
+    time: "8:00 PM",
     location: "SFO",
     eventType: "Flight",
   },
   {
     id: "7",
-    title: "Colombia",
-    date: "2025-05-15",
-    location: "AMC Lincoln Square",
+    title: "CS161",
+    date: "01/05/25",
+    time: "8:00 PM",
+    location: "Dwinelle 155",
     eventType: "Education",
   },
   {
     id: "8",
     title: "Weekend Beach Trip",
-    date: "2025-05-15",
+    date: "01/05/25",
+    time: "8:00 PM",
     location: "Miami",
     eventType: "Trip",
   },
   {
     id: "9",
     title: "Amber",
-    date: "2025-05-15",
+    date: "01/05/25",
+    time: "8:00 PM",
     location: "L'Ardoise Bistro",
     eventType: "Date",
   },
@@ -85,6 +95,7 @@ export function EventList() {
         <EventCard
           title={item.title}
           date={item.date}
+          time={item.time}
           location={item.location}
           eventType={item.eventType}
         />

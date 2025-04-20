@@ -6,7 +6,6 @@ import { EventList } from "@/components/events/event-list";
 export default function EventsScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Tagtive! - EVENTS</Text>
       <EventList />
       <StatusBar style='auto' />
     </SafeAreaView>
