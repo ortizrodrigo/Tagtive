@@ -1,6 +1,6 @@
-import React from "react";
-import { FlatList, StyleSheet } from "react-native";
-import { EventCard, EventType } from "./event-card";
+import { FlatList } from "react-native";
+import { EventCard } from "./event-card";
+import { styles } from "@/styles/events";
 
 type Event = {
   id: string;
@@ -8,7 +8,6 @@ type Event = {
   date: string;
   time: string;
   location: string;
-  eventType: EventType;
 };
 
 const mockEvents: Event[] = [
@@ -17,8 +16,7 @@ const mockEvents: Event[] = [
     title: "Andrea's Party",
     date: "01/05/25",
     time: "8:00 PM",
-    location: "123 Some Street",
-    eventType: "Social",
+    location: "123 Some Super Long Street",
   },
   {
     id: "2",
@@ -26,7 +24,6 @@ const mockEvents: Event[] = [
     date: "01/05/25",
     time: "8:00 PM",
     location: "Boulevard de Asia",
-    eventType: "Entertainment",
   },
   {
     id: "3",
@@ -34,7 +31,6 @@ const mockEvents: Event[] = [
     date: "01/05/25",
     time: "8:00 PM",
     location: "San Francisco",
-    eventType: "Work",
   },
   {
     id: "4",
@@ -42,7 +38,6 @@ const mockEvents: Event[] = [
     date: "01/05/25",
     time: "8:00 PM",
     location: "Field",
-    eventType: "Sports",
   },
   {
     id: "5",
@@ -50,7 +45,6 @@ const mockEvents: Event[] = [
     date: "01/05/25",
     time: "8:00 PM",
     location: "Telegraph",
-    eventType: "Dining",
   },
   {
     id: "6",
@@ -58,7 +52,6 @@ const mockEvents: Event[] = [
     date: "01/05/25",
     time: "8:00 PM",
     location: "SFO",
-    eventType: "Flight",
   },
   {
     id: "7",
@@ -66,7 +59,6 @@ const mockEvents: Event[] = [
     date: "01/05/25",
     time: "8:00 PM",
     location: "Dwinelle 155",
-    eventType: "Education",
   },
   {
     id: "8",
@@ -74,7 +66,6 @@ const mockEvents: Event[] = [
     date: "01/05/25",
     time: "8:00 PM",
     location: "Miami",
-    eventType: "Trip",
   },
   {
     id: "9",
@@ -82,7 +73,6 @@ const mockEvents: Event[] = [
     date: "01/05/25",
     time: "8:00 PM",
     location: "L'Ardoise Bistro",
-    eventType: "Date",
   },
 ];
 
@@ -97,16 +87,10 @@ export function EventList() {
           date={item.date}
           time={item.time}
           location={item.location}
-          eventType={item.eventType}
         />
       )}
       contentContainerStyle={styles.list}
+      style={styles.flatList}
     />
   );
 }
-
-const styles = StyleSheet.create({
-  list: {
-    paddingBottom: 16,
-  },
-});
