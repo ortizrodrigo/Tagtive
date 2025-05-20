@@ -7,10 +7,10 @@ export const tabStyles = (colorScheme: "light" | "dark") => {
       color: Colors[colorScheme].tint,
     },
     activeTabText: {
-      color: Colors[colorScheme].aquaBlue,
+      color: Colors[colorScheme].tabTextSelected,
     },
     inactiveTabText: {
-      color: Colors[colorScheme].coralRed,
+      color: Colors[colorScheme].tabTextDefault,
     },
   });
 };

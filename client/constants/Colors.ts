@@ -1,32 +1,67 @@
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
+ * Below are the colors used throughout the app. Colors are organized by use case
+ * and theme (light and dark mode).
  */
 
-const tintColorLight = "#0a7ea4";
-const tintColorDark = "#fff";
 const coralRed = "#ff3056";
 const aquaBlue = "#2e89ff";
+const tintColorLight = "#0a7ea4";
+const tintColorDark = "#fff";
+
+// Shared/Base Colors
+const baseColors = {
+  textLight: "#11181C",
+  textDark: "#ECEDEE",
+  backgroundLight: "#fff",
+  backgroundDark: "#151718",
+
+  // Neutrals
+  iconLight: "#687076", // A subtle gray for light mode
+  iconDark: "#9BA1A6", // A lighter gray for dark mode
+
+  // Tab colors
+  tabIconDefaultLight: "#687076", // Gray for unselected tabs (light)
+  tabIconDefaultDark: "#9BA1A6", // Gray for unselected tabs (dark)
+  tabIconSelected: coralRed,
+
+  tabTextDefaultLight: "#687076",
+  tabTextDefaultDark: "#9BA1A6",
+  tabTextSelected: coralRed,
+
+  // Event usage
+  eventPrimary: coralRed,
+  eventAccent: aquaBlue,
+};
+
+// Light Mode Colors
+export const lightColors = {
+  text: baseColors.textLight,
+  background: baseColors.backgroundLight,
+  tint: tintColorLight,
+  icon: baseColors.iconLight,
+  tabIconDefault: baseColors.tabIconDefaultLight,
+  tabIconSelected: baseColors.tabIconSelected,
+  tabTextDefault: baseColors.tabTextDefaultLight,
+  tabTextSelected: baseColors.tabTextSelected,
+  eventPrimary: baseColors.eventPrimary,
+  eventAccent: baseColors.eventAccent,
+};
+
+// Dark Mode Colors
+export const darkColors = {
+  text: baseColors.textDark,
+  background: baseColors.backgroundDark,
+  tint: tintColorDark,
+  icon: baseColors.iconDark,
+  tabIconDefault: baseColors.tabIconDefaultDark,
+  tabIconSelected: baseColors.tabIconSelected,
+  tabTextDefault: baseColors.tabTextDefaultDark,
+  tabTextSelected: baseColors.tabTextSelected,
+  eventPrimary: baseColors.eventPrimary,
+  eventAccent: baseColors.eventAccent,
+};
 
 export const Colors = {
-  light: {
-    text: "#11181C",
-    background: "#fff",
-    tint: tintColorLight,
-    icon: "#687076",
-    tabIconDefault: "#687076",
-    tabIconSelected: tintColorLight,
-    coralRed,
-    aquaBlue,
-  },
-  dark: {
-    text: "#ECEDEE",
-    background: "#151718",
-    tint: tintColorDark,
-    icon: "#9BA1A6",
-    tabIconDefault: "#9BA1A6",
-    tabIconSelected: tintColorDark,
-    coralRed,
-    aquaBlue,
-  },
+  light: lightColors,
+  dark: darkColors,
 };
