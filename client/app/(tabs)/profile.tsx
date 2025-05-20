@@ -1,11 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, SafeAreaView } from "react-native";
-import { styles } from "@/styles/events";
+import { styles } from "@/styles/profile"
 
-export default function EventsScreen() {
+export default function ProfileScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Tagtive! - EVENTS</Text>
+      <Text>Tagtive! - PROFILE</Text>
       <StatusBar style='auto' />
     </SafeAreaView>
   );
