@@ -4,6 +4,28 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1, // Ensures SafeAreaView takes full screen height
   },
+  headerContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+  },
+  headerSpacer: {
+    width: 24, // Matches the addButton size for centering the title
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    flex: 1, // Ensures title stays centered
+  },
+  addButton: {
+    width: 24,
+    height: 24,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   flatList: {
     flex: 1, // Ensures FlatList takes full width and height of parent
   },
