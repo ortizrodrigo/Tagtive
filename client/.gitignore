@@ -4,3 +4,22 @@
 
 expo-env.d.ts
 # @end expo-cli
+
+# Expo generated files to ignore
+.expo/
+.expo-shared/
+.expo/env.json
+
+# Metro bundler cache
+metro-cache/
+
+# Expo build outputs
+web-build/
+dist/
+
+# iOS and Android build folders (if relevant)
+ios/build/
+android/build/
+
+# Expo debug and logs
+*.log
