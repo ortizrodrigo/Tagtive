@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Platform } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,6 +11,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 16,
     paddingVertical: 12,
+    paddingTop: Platform.OS === "android" ? 30 : 0, // Ensures the header is not touching the status bar
   },
   headerSpacer: {
     width: 24, // Matches the addButton size for centering the title
@@ -20,7 +22,7 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     flex: 1, // Ensures title stays centered
   },
-  addButton: {
+  headerAddButton: {
     width: 24,
     height: 24,
     justifyContent: "center",

@@ -43,8 +43,8 @@ export const lightColors = {
   tabIconSelected: baseColors.tabIconSelected,
   tabTextDefault: baseColors.tabTextDefaultLight,
   tabTextSelected: baseColors.tabTextSelected,
-  eventPrimary: baseColors.eventPrimary,
-  eventAccent: baseColors.eventAccent,
+  tagtivePrimary: baseColors.eventPrimary,
+  tagtiveAccent: baseColors.eventAccent,
 };
 
 // Dark Mode Colors

@@ -13,7 +13,7 @@ export function EventListHeader() {
       <Text style={[styles.headerTitle, { color: Colors[colorScheme].text }]}>
         Events
       </Text>
-      <TouchableOpacity style={styles.addButton}>
+      <TouchableOpacity style={styles.headerAddButton}>
         <Ionicons name='add' size={24} color={Colors[colorScheme].icon} />
       </TouchableOpacity>
     </View>
