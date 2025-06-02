@@ -84,4 +84,11 @@ export const styles = StyleSheet.create({
     flexShrink: 1, // Allows location to shrink and truncate
     overflow: "hidden",
   },
+  modalContent: {
+    flex: 1,
+    padding: 16,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
 });

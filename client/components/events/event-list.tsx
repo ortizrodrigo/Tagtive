@@ -10,76 +10,14 @@ type Event = {
   location: string;
 };
 
-const mockEvents: Event[] = [
-  {
-    id: "1",
-    title: "Andrea's Party",
-    date: "01/05/25",
-    time: "8:00 PM",
-    location: "123 Some Super Long Street",
-  },
-  {
-    id: "2",
-    title: "Joia Beach Club",
-    date: "01/05/25",
-    time: "8:00 PM",
-    location: "Boulevard de Asia",
-  },
-  {
-    id: "3",
-    title: "Conference",
-    date: "01/05/25",
-    time: "8:00 PM",
-    location: "San Francisco",
-  },
-  {
-    id: "4",
-    title: "Football",
-    date: "01/05/25",
-    time: "8:00 PM",
-    location: "Field",
-  },
-  {
-    id: "5",
-    title: "Eureka!",
-    date: "01/05/25",
-    time: "8:00 PM",
-    location: "Telegraph",
-  },
-  {
-    id: "6",
-    title: "Flight to Colombia",
-    date: "01/05/25",
-    time: "8:00 PM",
-    location: "SFO",
-  },
-  {
-    id: "7",
-    title: "CS161",
-    date: "01/05/25",
-    time: "8:00 PM",
-    location: "Dwinelle 155",
-  },
-  {
-    id: "8",
-    title: "Weekend Beach Trip",
-    date: "01/05/25",
-    time: "8:00 PM",
-    location: "Miami",
-  },
-  {
-    id: "9",
-    title: "Amber",
-    date: "01/05/25",
-    time: "8:00 PM",
-    location: "L'Ardoise Bistro",
-  },
-];
+type EventListProps = {
+  events: Event[];
+};
 
-export function EventList() {
+export function EventList({ events }: EventListProps) {
   return (
     <FlatList
-      data={mockEvents}
+      data={events}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <EventCard
