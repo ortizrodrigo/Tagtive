@@ -29,8 +29,8 @@ const baseColors = {
   tabTextSelected: coralRed,
 
   // Event usage
-  eventPrimary: coralRed,
-  eventAccent: aquaBlue,
+  tagtivePrimary: coralRed,
+  tagtiveAccent: aquaBlue,
 };
 
 // Light Mode Colors
@@ -43,8 +43,8 @@ export const lightColors = {
   tabIconSelected: baseColors.tabIconSelected,
   tabTextDefault: baseColors.tabTextDefaultLight,
   tabTextSelected: baseColors.tabTextSelected,
-  tagtivePrimary: baseColors.eventPrimary,
-  tagtiveAccent: baseColors.eventAccent,
+  tagtivePrimary: baseColors.tagtivePrimary,
+  tagtiveAccent: baseColors.tagtiveAccent,
 };
 
 // Dark Mode Colors
@@ -57,8 +57,8 @@ export const darkColors = {
   tabIconSelected: baseColors.tabIconSelected,
   tabTextDefault: baseColors.tabTextDefaultDark,
   tabTextSelected: baseColors.tabTextSelected,
-  eventPrimary: baseColors.eventPrimary,
-  eventAccent: baseColors.eventAccent,
+  tagtivePrimary: baseColors.tagtivePrimary,
+  tagtiveAccent: baseColors.tagtiveAccent,
 };
 
 export const Colors = {

@@ -1,4 +1,10 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+  useEffect,
+} from "react";
 import {
   View,
   Text,
@@ -6,7 +12,6 @@ import {
   TextInput,
   StyleSheet,
 } from "react-native";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 import {
   BottomSheetModal,
   BottomSheetView,
@@ -34,12 +39,13 @@ export const EventModal = ({
 }: EventModalProps) => {
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
   const colorScheme = useColorScheme() ?? "light";
+
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [location, setLocation] = useState("");
 
-  const snapPoints = useMemo(() => ["50%", "75%"], []);
+  const snapPoints = useMemo(() => ["90%"], []);
 
   const handleSheetChanges = useCallback(
     (index: number) => {
@@ -50,7 +56,7 @@ export const EventModal = ({
     [onClose]
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isOpen) {
       bottomSheetModalRef.current?.present();
     } else {
@@ -81,93 +87,89 @@ export const EventModal = ({
   };
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <BottomSheetModal
-        ref={bottomSheetModalRef}
-        index={isOpen ? 1 : -1}
-        snapPoints={snapPoints}
-        onChange={handleSheetChanges}
-        enablePanDownToClose={true}
-        backdropComponent={renderBackdrop}
-      >
-        <BottomSheetView style={eventStyles.modalContent}>
-          <Text
+    <BottomSheetModal
+      ref={bottomSheetModalRef}
+      index={isOpen ? 1 : -1}
+      snapPoints={snapPoints}
+      onChange={handleSheetChanges}
+      enablePanDownToClose={true}
+      backdropComponent={renderBackdrop}
+      backgroundStyle={{ backgroundColor: Colors[colorScheme].background }}
+    >
+      <BottomSheetView style={eventStyles.modalContent}>
+        <Text
+          style={[eventStyles.headerTitle, { color: Colors[colorScheme].text }]}
+        >
+          Add Event
+        </Text>
+        <View style={modalStyles.form}>
+          <TextInput
             style={[
-              eventStyles.headerTitle,
-              { color: Colors[colorScheme].text },
+              modalStyles.input,
+              {
+                color: Colors[colorScheme].text,
+                borderColor: Colors[colorScheme].icon,
+              },
             ]}
+            placeholder='Event Title'
+            placeholderTextColor={Colors[colorScheme].text}
+            value={title}
+            onChangeText={setTitle}
+          />
+          <TextInput
+            style={[
+              modalStyles.input,
+              {
+                color: Colors[colorScheme].text,
+                borderColor: Colors[colorScheme].icon,
+              },
+            ]}
+            placeholder='Date (e.g., 01/05/25)'
+            placeholderTextColor={Colors[colorScheme].text}
+            value={date}
+            onChangeText={setDate}
+          />
+          <TextInput
+            style={[
+              modalStyles.input,
+              {
+                color: Colors[colorScheme].text,
+                borderColor: Colors[colorScheme].icon,
+              },
+            ]}
+            placeholder='Time (e.g., 8:00 PM)'
+            placeholderTextColor={Colors[colorScheme].text}
+            value={time}
+            onChangeText={setTime}
+          />
+          <TextInput
+            style={[
+              modalStyles.input,
+              {
+                color: Colors[colorScheme].text,
+                borderColor: Colors[colorScheme].icon,
+              },
+            ]}
+            placeholder='Location'
+            placeholderTextColor={Colors[colorScheme].text}
+            value={location}
+            onChangeText={setLocation}
+          />
+          <TouchableOpacity
+            style={[
+              modalStyles.button,
+              { backgroundColor: Colors[colorScheme].tagtivePrimary },
+            ]}
+            onPress={handleAddEvent}
           >
-            Add Event
-          </Text>
-          <View style={modalStyles.form}>
-            <TextInput
-              style={[
-                modalStyles.input,
-                {
-                  color: Colors[colorScheme].text,
-                  borderColor: Colors[colorScheme].icon,
-                },
-              ]}
-              placeholder='Event Title'
-              placeholderTextColor={Colors[colorScheme].text}
-              value={title}
-              onChangeText={setTitle}
-            />
-            <TextInput
-              style={[
-                modalStyles.input,
-                {
-                  color: Colors[colorScheme].text,
-                  borderColor: Colors[colorScheme].icon,
-                },
-              ]}
-              placeholder='Date (e.g., 01/05/25)'
-              placeholderTextColor={Colors[colorScheme].text}
-              value={date}
-              onChangeText={setDate}
-            />
-            <TextInput
-              style={[
-                modalStyles.input,
-                {
-                  color: Colors[colorScheme].text,
-                  borderColor: Colors[colorScheme].icon,
-                },
-              ]}
-              placeholder='Time (e.g., 8:00 PM)'
-              placeholderTextColor={Colors[colorScheme].text}
-              value={time}
-              onChangeText={setTime}
-            />
-            <TextInput
-              style={[
-                modalStyles.input,
-                {
-                  color: Colors[colorScheme].text,
-                  borderColor: Colors[colorScheme].icon,
-                },
-              ]}
-              placeholder='Location'
-              placeholderTextColor={Colors[colorScheme].text}
-              value={location}
-              onChangeText={setLocation}
-            />
-            <TouchableOpacity
-              style={[
-                modalStyles.button,
-                { backgroundColor: Colors[colorScheme].tint },
-              ]}
-              onPress={handleAddEvent}
-            >
-              <Text style={modalStyles.buttonText}>Add Event</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={onClose}>
-              <Text style={{ color: Colors[colorScheme].tint }}>Cancel</Text>
-            </TouchableOpacity>
-          </View>
-        </BottomSheetView>
-      </BottomSheetModal>
-    </GestureHandlerRootView>
+            <Text style={modalStyles.buttonText}>Add Event</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onClose}>
+            <Text style={{ color: Colors[colorScheme].tagtiveAccent }}>Cancel</Text>
+          </TouchableOpacity>
+        </View>
+      </BottomSheetView>
+    </BottomSheetModal>
   );
 };
 
