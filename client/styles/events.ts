@@ -86,9 +86,6 @@ export const styles = StyleSheet.create({
   },
   modalContent: {
     flex: 1,
-    padding: 16,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: "column",
   },
 });
