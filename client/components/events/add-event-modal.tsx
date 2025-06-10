@@ -89,10 +89,11 @@ export const EventModal = ({
   return (
     <BottomSheetModal
       ref={bottomSheetModalRef}
-      index={isOpen ? 1 : -1}
+      index={isOpen ? 0 : -1}
       snapPoints={snapPoints}
       onChange={handleSheetChanges}
       enablePanDownToClose={true}
+      enableDynamicSizing={false}
       backdropComponent={renderBackdrop}
       backgroundStyle={{ backgroundColor: Colors[colorScheme].background }}
     >
@@ -165,7 +166,9 @@ export const EventModal = ({
             <Text style={modalStyles.buttonText}>Add Event</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={onClose}>
-            <Text style={{ color: Colors[colorScheme].tagtiveAccent }}>Cancel</Text>
+            <Text style={{ color: Colors[colorScheme].tagtiveAccent }}>
+              Cancel
+            </Text>
           </TouchableOpacity>
         </View>
       </BottomSheetView>
